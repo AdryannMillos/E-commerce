@@ -8,7 +8,7 @@ const ProductScreen = () => {
     
   const params = useParams();
 
-  const product = data.products.find((x) => x._id == params.id);
+  const product = data.products.find((x) => x._id === params.id);
   if (!product) {
     return <div>No product found</div>;
   }
@@ -45,9 +45,9 @@ const ProductScreen = () => {
                   <div>Status</div>
                   <div>
                     {product.countInStock > 0 ? (
-                      <span className="sucess">In Stock</span>
+                      <span className="success">In Stock</span>
                     ) : (
-                      <span className="error">Unavailable</span>
+                      <span className="danger">Unavailable</span>
                     )}
                   </div>
                 </div>
