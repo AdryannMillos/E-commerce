@@ -1,7 +1,7 @@
 const data = {
     products: [
       {
-        _id: '1',
+        id: '1',
         name: 'Nike Slim Shirt',
         category: 'Shirts',
         image: '/images/caneca.jpg',
@@ -13,7 +13,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '2',
+        id: '2',
         name: 'Adidas Fit Shirt',
         category: 'Shirts',
         image: '/images/Mask.jpg',
@@ -25,7 +25,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '3',
+        id: '3',
         name: 'Lacoste Free Shirt',
         category: 'Shirts',
         image: '/images/oculos-de-grau.jpg',
@@ -37,7 +37,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '4',
+        id: '4',
         name: 'Nike Slim Pant',
         category: 'Pants',
         image: '/images/oculos-escuro.jpg',
@@ -49,7 +49,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '5',
+        id: '5',
         name: 'Puma Slim Pant',
         category: 'Pants',
         image: '/images/oculos-preto.jpg',
@@ -61,7 +61,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '6',
+        id: '6',
         name: 'Adidas Fit Pant',
         category: 'Pants',
         image: '/images/caneca.jpg',
