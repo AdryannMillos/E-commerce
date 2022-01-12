@@ -21,7 +21,7 @@ function App() {
           <div>
             <Link to="/cart">Cart
             {cartItems.length>0 && (
-              <span className="badge">{cartItems[0].qty}</span>
+              <span className="badge">{cartItems.length}</span>
             )}
             </Link>
             <Link to="/signin">Sign In</Link>
@@ -48,6 +48,14 @@ function App() {
             />
             <Route
               path="/cart/:id"
+              element={
+                <div>
+                  <CartScreen />
+                </div>
+              }
+            />
+              <Route
+              path="/cart"
               element={
                 <div>
                   <CartScreen />

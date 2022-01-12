@@ -21,7 +21,7 @@ app.get("/api/products/:id", (req, res) => {
   }
 });
 
-const port = process.env.Port || 4000;
+const port = process.env.Port || 5000;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
