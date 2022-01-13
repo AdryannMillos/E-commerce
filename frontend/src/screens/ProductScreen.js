@@ -4,9 +4,9 @@ import Rating from "../components/Rating";
 import { useSelector, useDispatch } from "react-redux";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { detailsProducts } from "../actions/productActions";
+import { detailsProduct } from "../actions/productActions";
 
-export default function ProductScreen(props) {
+export default function ProductScreen() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,9 +14,9 @@ export default function ProductScreen(props) {
   const params = useParams();
   const productId = params.id;
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, products } = productDetails;
+  const { loading, error, product } = productDetails;
   useEffect(() => {
-    dispatch(detailsProducts(productId));
+    dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
   const addToCartHanddler = () => {
     navigate(`/cart/${productId}?qty=${qty}`);
@@ -34,25 +34,25 @@ export default function ProductScreen(props) {
             <div className="col-2">
               <img
                 className="large"
-                src={products.image}
-                alt={products.name}
+                src={product.image}
+                alt={product.name}
               ></img>
             </div>
             <div className="col-1">
               <ul>
                 <li>
-                  <h1>{products.name}</h1>
+                  <h1>{product.name}</h1>
                 </li>
                 <li>
                   <Rating
-                    rating={products.rating}
-                    numReviews={products.numReviews}
+                    rating={product.rating}
+                    numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Price : $ {products.price}</li>
+                <li>Price : $ {product.price}</li>
                 <li>
                   Description:
-                  <p>{products.description}</p>
+                  <p>{product.description}</p>
                 </li>
               </ul>
             </div>
@@ -62,14 +62,14 @@ export default function ProductScreen(props) {
                   <li>
                     <div className="row">
                       <div>Price</div>
-                      <div className="price">$ {products.price}</div>
+                      <div className="price">$ {product.price}</div>
                     </div>
                   </li>
                   <li>
                     <div className="row">
                       <div>Status</div>
                       <div>
-                        {products.countInStock > 0 ? (
+                        {product.countInStock > 0 ? (
                           <span className="success">In Stock</span>
                         ) : (
                           <span className="danger">Unavailable</span>
@@ -77,7 +77,7 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  {products.countInStock > 0 && (
+                  {product.countInStock > 0 && (
                     <>
                       <li>
                         <div className="row">
@@ -87,7 +87,7 @@ export default function ProductScreen(props) {
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
                             >
-                              {[...Array(products.countInStock).keys()].map(
+                              {[...Array(product.countInStock).keys()].map(
                                 (x) => (
                                   <option key={x + 1} value={x + 1}>
                                     {x + 1}

@@ -34,7 +34,7 @@ const CartScreen = () => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <MessageBox>
-            Cart is empty <Link to="/">Go Shopping</Link>
+            Cart is empty. <Link to="/">Go Shopping</Link>
           </MessageBox>
         ) : (
           <ul>
@@ -69,7 +69,10 @@ const CartScreen = () => {
                   </div>
                   <div>$ {item.price}</div>
                   <div>
-                    <button onClick={() => removeFromCartHandler(item.product)}>
+                    <button
+                      type="button"
+                      onClick={() => removeFromCartHandler(item.product)}
+                    >
                       Delete
                     </button>
                   </div>
@@ -80,7 +83,7 @@ const CartScreen = () => {
         )}
       </div>
       <div className="col-1">
-        <div className="card card body">
+        <div className="card card-body">
           <ul>
             <li>
               <h2>
@@ -95,7 +98,6 @@ const CartScreen = () => {
                 className="primary block"
                 disabled={cartItems.length === 0}
               >
-                {" "}
                 Proceed to Checkout
               </button>
             </li>
@@ -104,6 +106,6 @@ const CartScreen = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CartScreen;
