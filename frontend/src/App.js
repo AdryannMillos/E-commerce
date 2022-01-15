@@ -8,7 +8,7 @@ import SigninScreen from "./screens/SigninScreen";
 import { signout } from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAdressScreen";
-import PaymentMethodScreen from "./screens/PaymentMethodScree";
+import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
