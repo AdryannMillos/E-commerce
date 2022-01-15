@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
-import { addToCart, removeFromCart } from "../actions/cartAction";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import MessageBox from "./../components/MessageBox";
 
 const CartScreen = () => {

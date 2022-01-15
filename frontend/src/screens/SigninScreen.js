@@ -11,7 +11,7 @@ const SigninScreen = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  const redirect = location.search ? '/'+location.search.split("=")[1] : "/";
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo, loading, error } = userSignin;
