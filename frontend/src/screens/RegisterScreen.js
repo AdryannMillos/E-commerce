@@ -13,7 +13,7 @@ export default function RegisterScreen() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const location = useLocation();
 
-  const redirect = location.search ? '/'+location.search.split("=")[1] : "/";
+  const redirect = location.search ? location.search.split("=")[1] : "/";
 
 
   const userRegister = useSelector((state) => state.userRegister);
